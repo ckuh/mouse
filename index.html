@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>mouse</title>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/keypress/2.1.4/keypress.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script charset="utf-8">
+    $(function () {
+      var listener = new keypress.Listener();
+      var socket = io('http://localhost:3000');
+
+      document.addEventListener('keydown', event => {
+        console.log(event.key)
+        socket.emit('key press', {name: event.key});
+      })
+
+      listener.simple_combo('up left', () => {
+        console.log('DiagUpLeft')
+        socket.emit('key press', {name: 'DiagUpLeft'});
+      })
+      listener.simple_combo('up right', () => {
+        console.log('DiagUpRight')
+        socket.emit('key press', {name: 'DiagUpRight'});
+      })
+      listener.simple_combo('down left', () => {
+        console.log('DiagDownLeft')
+        socket.emit('key press', {name: 'DiagDownLeft'});
+      })
+      listener.simple_combo('down right', () => {
+        console.log('DiagDownRight')
+        socket.emit('key press', {name: 'DiagDownRight'});
+      })
+      listener.simple_combo('left up', () => {
+        console.log('DiagUpLeft')
+        socket.emit('key press', {name: 'DiagUpLeft'});
+      })
+      listener.simple_combo('right up', () => {
+        console.log('DiagUpRight')
+        socket.emit('key press', {name: 'DiagUpRight'});
+      })
+      listener.simple_combo('left down', () => {
+        console.log('DiagDownLeft')
+        socket.emit('key press', {name: 'DiagDownLeft'});
+      })
+      listener.simple_combo('righ downt', () => {
+        console.log('DiagDownRight')
+        socket.emit('key press', {name: 'DiagDownRight'});
+      })
+    });
+    </script>
+  </body>
+</html>
