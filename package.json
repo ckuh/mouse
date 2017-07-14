@@ -5,9 +5,9 @@
   "author": "ckuh <kuh_chris@yahoo.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./dist/bundle.js",
-    "build": "babel main.js --out-dir ./dist/bundle.js  --presets=env",
-    "watch": "babel main.js --watch --out-dir ./dist/bundle.js  --presets=env"
+    "start": "nodemon ./dist/main.js",
+    "build": "babel main.js --out-dir ./dist/  --presets=env",
+    "watch": "babel main.js --watch --out-dir ./dist/  --presets=env"
   },
   "dependencies": {
     "babel-preset-env": "^1.6.0",
